@@ -10,6 +10,7 @@ import Foundation
 struct Test {
     var name: String
     var countQuestions: Int
+    var description: String
 }
 
 
