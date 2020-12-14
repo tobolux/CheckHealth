@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Test1: Object {
+class Test: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var desc: String = ""
     @objc dynamic var countQuestions: Int = 0

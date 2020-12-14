@@ -8,6 +8,8 @@
 import Foundation
 import RealmSwift
 
+
+
 class Answer: Object {
     
     @objc dynamic var answer: String = ""
@@ -21,3 +23,9 @@ class Question: Object {
     @objc dynamic var score: Int = 0
     
 }
+
+
+
+    
+    
+

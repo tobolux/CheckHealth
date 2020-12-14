@@ -17,14 +17,14 @@ class TableViewController: UITableViewController {
 //    ]
   
     let realm = try! Realm()
-    var array: Results<Test1>!
+    var array: Results<Test>!
     
     
     override func viewDidLoad() {
         title = "Проверь свое здоровье"
         
        // addTest()
-        array = realm.objects(Test1.self)
+        array = realm.objects(Test.self)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +51,7 @@ class TableViewController: UITableViewController {
     }
     
     func addTest() {
-        let qqq = Test1()
+        let qqq = Test()
         qqq.name = "IPSS"
         qqq.countQuestions = 4
         qqq.desc = "Система суммарной оценки симптомов болезней предстательной железы"

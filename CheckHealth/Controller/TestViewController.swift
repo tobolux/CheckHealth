@@ -34,6 +34,7 @@ class TestViewController: UIViewController {
         guard segue.identifier == "toQuestions" else { return }
         guard let destination = segue.destination as? QuestionsViewController else { return }
         destination.testCount = testCount
+        destination.testName = testName
     }
 
 }
