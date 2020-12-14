@@ -14,13 +14,11 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     let realm = try! Realm()
     
-    var numberAnswer = 0
-    var numberQuestion = 0
-    var scoreTest = 0
+    var numberAnswer = 0, numberQuestion = 0, scoreTest = 0, testCount: Int = 0
     
     var answerArray: Results<Answer>!
     var questionArray: Results<Question>!
-    
+    var array: Results<Test1>!
     
     
     override func viewDidLoad() {
@@ -31,57 +29,52 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
         loadObjects()
         
         asnwerLabel.text = answerArray[numberAnswer].answer
+
+    
         tableViewAdd.delegate = self
         tableViewAdd.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return testCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellQuestion", for: indexPath)
 
+ 
         cell.textLabel?.text = questionArray[indexPath.row + numberQuestion].question
+       
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let selectedPath = tableView.indexPathForSelectedRow else { return }
-        let testName = questionArray[selectedPath.row + numberQuestion].score
-        scoreTest += testName
-        print(scoreTest)
-        
         numberAnswer += 1
-        numberQuestion += 4
-        asnwerLabel.text = answerArray[numberAnswer].answer
-        
-        if numberAnswer == array. {
-        self.performSegue(withIdentifier: "toResult", sender: indexPath)
-        }
-        
-        tableView.reloadData()
-         
+        if numberAnswer == testCount {
+            self.performSegue(withIdentifier: "toResult", sender: indexPath)
+            } else {
+                guard let selectedPath = tableView.indexPathForSelectedRow else { return }
+                let testName = questionArray[selectedPath.row + numberQuestion].score
+                scoreTest += testName
+                print(scoreTest)
+                
+                numberQuestion += 4
+                asnwerLabel.text = answerArray[numberAnswer].answer
+
+                tableView.reloadData()
+            }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//         guard let selectedPath = sender as? IndexPath else {
-//            return
-//         }
-//         if segue.identifier == "toResult", let vc = segue.destination as? ScoreViewController {
-//           // vc.playerImage = UIImageView(image: UIImage(named: "userIcon"))
-//           // vc.currentRankingLabel.text = String(player.ranking)
-//           // vc.scoreLabel.text = String("\(player.wins) - \(player.losses)")
-//         }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ScoreViewController {
+            destination.scoreTest = scoreTest
+        }
+     }
 
-    
     func addAnswer() {
         let qqq = Answer()
         qqq.answer = "Answer 1"
-        qqq.totalAnswer = 4
         do {
             try realm.write {
                 realm.add(qqq)
@@ -108,6 +101,7 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         answerArray = realm.objects(Answer.self)
         questionArray = realm.objects(Question.self)
+        array = realm.objects(Test1.self)
         
       //  tableView!.reloadData()
     }

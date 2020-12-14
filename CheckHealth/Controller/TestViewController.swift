@@ -8,13 +8,13 @@
 import UIKit
 
 class TestViewController: UIViewController {
-
+    
     var testName = ""
     var testDescription = ""
+    var testCount = 0
     
     @IBOutlet weak var testNameLabel: UILabel!
     @IBOutlet weak var testDescriptionLabel: UILabel!
-    
     
 
     override func viewDidLoad() {
@@ -27,7 +27,13 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
+
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toQuestions" else { return }
+        guard let destination = segue.destination as? QuestionsViewController else { return }
+        destination.testCount = testCount
+    }
 
 }

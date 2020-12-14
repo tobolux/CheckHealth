@@ -50,9 +50,7 @@
                             <outlet property="delegate" destination="Sgt-Mg-YNI" id="MRg-O9-wut"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BOi-In-1JJ">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="Iin-nd-tku"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="BOi-In-1JJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MG1-vv-yf3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +103,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YnU-yZ-Hrp">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="ix2-xu-svv"/>
+                        <barButtonItem key="backBarButtonItem" title="К началу теста" id="ix2-xu-svv"/>
                     </navigationItem>
                     <connections>
                         <outlet property="testDescriptionLabel" destination="ykL-PX-ZxV" id="pVW-bx-4BC"/>
@@ -165,9 +163,7 @@
                             <constraint firstItem="WOo-r6-lPR" firstAttribute="centerX" secondItem="3kO-KW-AuR" secondAttribute="centerX" id="oSr-fy-syG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="atO-7m-Erl">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="mAc-5C-2FV"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="atO-7m-Erl"/>
                     <connections>
                         <outlet property="asnwerLabel" destination="3kO-KW-AuR" id="WYx-n5-Jg7"/>
                         <outlet property="tableViewAdd" destination="WOo-r6-lPR" id="16l-9n-aA1"/>
@@ -185,16 +181,47 @@
                     <view key="view" contentMode="scaleToFill" id="d06-et-7Hj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш результат:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skd-LA-n02">
+                                <rect key="frame" x="146.5" y="139" width="121.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="результат" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrJ-sh-5Wi">
+                                <rect key="frame" x="157.5" y="189.5" width="99" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAz-jf-2zu">
+                                <rect key="frame" x="152" y="433" width="110" height="30"/>
+                                <state key="normal" title="Назад к тестам"/>
+                                <connections>
+                                    <action selector="goToRootVC:" destination="Edh-9N-HgZ" eventType="touchUpInside" id="CnV-ID-7bB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YPh-Ry-pkT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="skd-LA-n02" firstAttribute="top" secondItem="YPh-Ry-pkT" secondAttribute="top" constant="51" id="MNe-K7-cwf"/>
+                            <constraint firstItem="skd-LA-n02" firstAttribute="centerX" secondItem="d06-et-7Hj" secondAttribute="centerX" id="VM4-XL-jhl"/>
+                            <constraint firstItem="QAz-jf-2zu" firstAttribute="centerY" secondItem="d06-et-7Hj" secondAttribute="centerY" id="iUi-VU-LWc"/>
+                            <constraint firstItem="QAz-jf-2zu" firstAttribute="centerX" secondItem="d06-et-7Hj" secondAttribute="centerX" id="oNg-pK-kVi"/>
+                            <constraint firstItem="RrJ-sh-5Wi" firstAttribute="centerX" secondItem="d06-et-7Hj" secondAttribute="centerX" id="ycK-LT-65y"/>
+                            <constraint firstItem="RrJ-sh-5Wi" firstAttribute="top" secondItem="skd-LA-n02" secondAttribute="bottom" constant="30" id="ye4-Zb-HEF"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Результат" id="OtX-ER-DQb">
-                        <barButtonItem key="backBarButtonItem" title="Назад к тестам" id="yZH-hD-J3o"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Результат" id="OtX-ER-DQb"/>
+                    <connections>
+                        <outlet property="barItem" destination="OtX-ER-DQb" id="bQI-tJ-A0s"/>
+                        <outlet property="resultLabel" destination="RrJ-sh-5Wi" id="gpM-3N-kZZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g6-z0-3g7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3619" y="62"/>
+            <point key="canvasLocation" x="3618.840579710145" y="61.607142857142854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="akP-Lr-KjO">
