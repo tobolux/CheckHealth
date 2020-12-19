@@ -11,7 +11,7 @@ class TestViewController: UIViewController {
     
     var testName = ""
     var testDescription = ""
-    var testCount = 0
+    var testIndex = 0
     
     @IBOutlet weak var testNameLabel: UILabel!
     @IBOutlet weak var testDescriptionLabel: UILabel!
@@ -21,20 +21,18 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
         
         title = testName
-        
         testNameLabel.text = testName
         testDescriptionLabel.text = testDescription
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toQuestions" else { return }
         guard let destination = segue.destination as? QuestionsViewController else { return }
-        destination.testCount = testCount
         destination.testName = testName
+        destination.testIndex = testIndex
     }
 
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gmy-Xc-8bQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gmy-Xc-8bQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Ft-uf-Ozq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="xe5-UY-mCX" detailTextLabel="Ml4-ZZ-5IL" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="UAe-RC-uSR">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
@@ -40,6 +39,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="EoS-4w-y4V" kind="show" identifier="toTest" id="sB7-Q5-Spp"/>
                                 </connections>
@@ -94,7 +94,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="35I-gO-8Ka"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.98431372549019602" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7KQ-di-2Bg" firstAttribute="top" secondItem="35I-gO-8Ka" secondAttribute="top" constant="30" id="B4W-Vf-MoI"/>
                             <constraint firstItem="7KQ-di-2Bg" firstAttribute="centerX" secondItem="xB7-af-DS6" secondAttribute="centerX" id="BnS-RY-gMU"/>
@@ -129,8 +129,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WOo-r6-lPR">
-                                <rect key="frame" x="0.0" y="128.5" width="414" height="498.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="147.5" width="414" height="715.5"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellQuestion" textLabel="aLK-Q7-OFZ" style="IBUITableViewCellStyleDefault" id="Kzs-2t-hnS">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -147,26 +148,35 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NYU-0B-ntX">
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KEi-tK-8Nh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3kO-KW-AuR" firstAttribute="leading" secondItem="KEi-tK-8Nh" secondAttribute="leading" constant="20" id="2xj-C0-8nk"/>
-                            <constraint firstItem="WOo-r6-lPR" firstAttribute="leading" secondItem="KEi-tK-8Nh" secondAttribute="leading" id="9cW-cm-fgN"/>
-                            <constraint firstItem="WOo-r6-lPR" firstAttribute="top" secondItem="3kO-KW-AuR" secondAttribute="bottom" constant="10" id="KiF-tN-LMh"/>
+                            <constraint firstItem="NYU-0B-ntX" firstAttribute="top" secondItem="3kO-KW-AuR" secondAttribute="bottom" constant="15" id="GvD-ub-Uy3"/>
                             <constraint firstItem="3kO-KW-AuR" firstAttribute="top" secondItem="KEi-tK-8Nh" secondAttribute="top" constant="10" id="R4q-a9-4yB"/>
-                            <constraint firstItem="KEi-tK-8Nh" firstAttribute="bottom" secondItem="WOo-r6-lPR" secondAttribute="bottom" constant="235" id="dIr-sh-QVJ"/>
+                            <constraint firstItem="WOo-r6-lPR" firstAttribute="leading" secondItem="NYU-0B-ntX" secondAttribute="leading" id="VpZ-NJ-iB4"/>
                             <constraint firstItem="KEi-tK-8Nh" firstAttribute="trailing" secondItem="3kO-KW-AuR" secondAttribute="trailing" constant="20" id="gaz-yY-xHt"/>
-                            <constraint firstItem="WOo-r6-lPR" firstAttribute="centerX" secondItem="3kO-KW-AuR" secondAttribute="centerX" id="oSr-fy-syG"/>
+                            <constraint firstItem="NYU-0B-ntX" firstAttribute="centerX" secondItem="ZFe-0e-SdL" secondAttribute="centerX" id="jQf-Ns-ZWb"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="WOo-r6-lPR" secondAttribute="bottom" constant="-1" id="ml2-p8-r11"/>
+                            <constraint firstItem="WOo-r6-lPR" firstAttribute="top" secondItem="NYU-0B-ntX" secondAttribute="bottom" constant="10" id="nte-qT-rjH"/>
+                            <constraint firstItem="WOo-r6-lPR" firstAttribute="leading" secondItem="KEi-tK-8Nh" secondAttribute="leading" id="oxa-oG-zzu"/>
+                            <constraint firstItem="WOo-r6-lPR" firstAttribute="trailing" secondItem="NYU-0B-ntX" secondAttribute="trailing" id="rgn-1Q-cBw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="atO-7m-Erl"/>
                     <connections>
-                        <outlet property="asnwerLabel" destination="3kO-KW-AuR" id="WYx-n5-Jg7"/>
+                        <outlet property="answerLabel" destination="3kO-KW-AuR" id="WYx-n5-Jg7"/>
+                        <outlet property="progressView" destination="NYU-0B-ntX" id="VSx-jD-UaS"/>
                         <outlet property="tableViewAdd" destination="WOo-r6-lPR" id="16l-9n-aA1"/>
                         <segue destination="Edh-9N-HgZ" kind="show" identifier="toResult" id="zpe-Zs-Jqe"/>
                     </connections>
@@ -196,21 +206,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAz-jf-2zu">
-                                <rect key="frame" x="152" y="433" width="110" height="30"/>
+                                <rect key="frame" x="152" y="266" width="110" height="30"/>
                                 <state key="normal" title="Назад к тестам"/>
                                 <connections>
-                                    <action selector="goToRootVC:" destination="Edh-9N-HgZ" eventType="touchUpInside" id="CnV-ID-7bB"/>
+                                    <action selector="goToRootVC:" destination="Edh-9N-HgZ" eventType="touchUpInside" id="OJ3-lq-d0t"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YPh-Ry-pkT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RrJ-sh-5Wi" secondAttribute="trailing" constant="20" id="M0I-L6-1j8"/>
                             <constraint firstItem="skd-LA-n02" firstAttribute="top" secondItem="YPh-Ry-pkT" secondAttribute="top" constant="51" id="MNe-K7-cwf"/>
                             <constraint firstItem="skd-LA-n02" firstAttribute="centerX" secondItem="d06-et-7Hj" secondAttribute="centerX" id="VM4-XL-jhl"/>
-                            <constraint firstItem="QAz-jf-2zu" firstAttribute="centerY" secondItem="d06-et-7Hj" secondAttribute="centerY" id="iUi-VU-LWc"/>
-                            <constraint firstItem="QAz-jf-2zu" firstAttribute="centerX" secondItem="d06-et-7Hj" secondAttribute="centerX" id="oNg-pK-kVi"/>
+                            <constraint firstItem="QAz-jf-2zu" firstAttribute="top" secondItem="RrJ-sh-5Wi" secondAttribute="bottom" constant="50" id="cM3-iM-RaV"/>
+                            <constraint firstItem="QAz-jf-2zu" firstAttribute="centerX" secondItem="d06-et-7Hj" secondAttribute="centerX" id="vfe-mN-uWY"/>
                             <constraint firstItem="RrJ-sh-5Wi" firstAttribute="centerX" secondItem="d06-et-7Hj" secondAttribute="centerX" id="ycK-LT-65y"/>
                             <constraint firstItem="RrJ-sh-5Wi" firstAttribute="top" secondItem="skd-LA-n02" secondAttribute="bottom" constant="30" id="ye4-Zb-HEF"/>
                             <constraint firstItem="RrJ-sh-5Wi" firstAttribute="leading" secondItem="YPh-Ry-pkT" secondAttribute="leading" constant="20" id="zNX-Lz-o7y"/>
@@ -245,9 +255,4 @@
             <point key="canvasLocation" x="228.98550724637684" y="61.607142857142854"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

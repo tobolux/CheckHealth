@@ -19,12 +19,15 @@ class ScoreViewController: UIViewController {
         super.viewDidLoad()
         
         barItem.hidesBackButton = true
+        print(scoreTest)
         
         switch testName {
         case "IPSS":
             resultLabel.text = resultIPSS(for: scoreTest)
         case "МИЭФ-5":
             resultLabel.text = resultMIEF5(for: scoreTest)
+        case "CAGE":
+            resultLabel.text = resultCAGE(for: scoreTest)
         default:
             resultLabel.text = "Error"
         }
@@ -34,7 +37,9 @@ class ScoreViewController: UIViewController {
     @IBAction func goToRootVC(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
+
+
+
     
     
 }

@@ -12,23 +12,31 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
-//                                                        appropriateFor: nil, create: false)
-//        let url = documentDirectory.appendingPathComponent("my-new-realm.realm")
+
+
+//        func compactRealm() {
+//                if let realmPath = Realm.Configuration.defaultConfiguration.fileURL {
+//                    let destination = realmPath.deletingLastPathComponent().appendingPathComponent("compact.realm")
+//                    if FileManager.default.fileExists(atPath: realmPath.path) {
+//                        do {
+//        //                    let encryption = Constants.key.data(using: String.Encoding.utf8)
+//                            try Realm().writeCopy(toFile: destination)
+//                            print("File normally compressed !")
 //
+//                        } catch {
+//                            fatalError(error.localizedDescription)
+//                        }
+//                    } else {
+//                        print("Realm file does not exist")
+//        //                fatalError()
+//                    }
 //
-        
-        print(Realm.Configuration.defaultConfiguration.fileURL)
-        
-        do {
-            let realm = try Realm()
-        } catch {
-            print(error)
-        }
+//                }
+//
+//            }
+
         
         return true
     }
@@ -46,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+    
 
 }
 

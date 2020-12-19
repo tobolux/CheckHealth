@@ -9,100 +9,76 @@ import UIKit
 import RealmSwift
 
 class QuestionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var asnwerLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var tableViewAdd: UITableView!
+    @IBOutlet weak var progressView: UIProgressView!
     
-    let realm = try! Realm()
     
-    var numberAnswer = 0, numberQuestion = 0, scoreTest = 0, testCount: Int = 0, testName = ""
-    
-    var answerArray: Results<Answer>!
-    var questionArray: Results<Question>!
+    var numberAnswer = 0, numberQuestion = 0, scoreTest = 0, testIndex = 0, testName = ""
+    var realm: Realm!
     var array: Results<Test>!
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //addAnswer()
-        //addQuestion()
-        loadObjects()
+        setupRealm()
+        array = realm.objects(Test.self)
         
-        asnwerLabel.text = answerArray[numberAnswer].answer
-
+        answerLabel.text = array[testIndex].answers[numberAnswer].answer
+        
+        
         tableViewAdd.delegate = self
         tableViewAdd.dataSource = self
+        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testCount
+        return array[testIndex].countQuestionsOnAnswer
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellQuestion", for: indexPath)
-
- 
-        cell.textLabel?.text = questionArray[indexPath.row + numberQuestion].question
-       
-        
+        cell.textLabel?.text = array[testIndex].questions[indexPath.row + numberQuestion].question
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedPath = tableView.indexPathForSelectedRow else { return }
-        let testName = questionArray[selectedPath.row + numberQuestion].score
+        let testName = array[testIndex].questions[selectedPath.row + numberQuestion].score
+    
+        numberAnswer += 1
+        scoreTest += testName
         
-        if numberAnswer == testCount {
-            scoreTest += testName
+        let totalProgress = Float(numberAnswer) / Float(array[testIndex].answers.count)
+        
+        if numberAnswer == array[testIndex].countQuestions {
             self.performSegue(withIdentifier: "toResult", sender: indexPath)
             } else {
-                scoreTest += testName
-                numberAnswer += 1
                 //numberQuestion += 4
-                asnwerLabel.text = answerArray[numberAnswer].answer
+                answerLabel.text = array[testIndex].answers[numberAnswer].answer
+                progressView.setProgress(totalProgress, animated: true)
 
+                
                 tableView.reloadData()
+                
             }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ScoreViewController {
             destination.scoreTest = scoreTest
-            destination.testName = testName
+            destination.testName = array[testIndex].name
         }
      }
+    
+    func setupRealm() {
+        let realmPath = Bundle.main.url(forResource: "compact", withExtension: "realm")!
+        let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
+        self.realm = try! Realm(configuration: realmConfiguration)
+    }
 
-    func addAnswer() {
-        let qqq = Answer()
-        qqq.answer = "1. Как часто в течение последнего месяца у Вас было ощущение неполного опорожнения мочевого пузыря после мочеиспускания?"
-        do {
-            try realm.write {
-                realm.add(qqq)
-            }
-        } catch {
-            print("Error \(error)")
-        }
-    }
     
-    func addQuestion() {
-        let qqq = Question()
-        qqq.question = "Никогда"
-        qqq.score = 0
-        do {
-            try realm.write {
-                realm.add(qqq)
-            }
-        } catch {
-            print("Error \(error)")
-        }
-    }
-    
-    func loadObjects() {
-        
-        answerArray = realm.objects(Answer.self)
-        questionArray = realm.objects(Question.self)
-        array = realm.objects(Test.self)
-        
-      //  tableView!.reloadData()
-    }
 }

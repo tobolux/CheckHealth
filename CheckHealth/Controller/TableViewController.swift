@@ -13,17 +13,16 @@ class TableViewController: UITableViewController {
 //    var array = [
 //        Test(name: "IPSS", countQuestions: 1, description: "Система суммарной оценки симптомов болезней предстательной железы"),
 //        Test(name: "FINDRISK", countQuestions: 10, description: "Для расчёта риска развития сахарного диабета"),
-//        Test(name: "CAGE", countQuestions: 20, description: "Для оценки начальной диагностики злоупотребления алкоголем")
 //    ]
-  
-    let realm = try! Realm()
-    var array: Results<Test>!
     
+    var realm: Realm!
+    var array: Results<Test>!
     
     override func viewDidLoad() {
         title = "Проверь свое здоровье"
-        
-       // addTest()
+    
+        //addTest()
+        setupRealm()
         array = realm.objects(Test.self)
     }
     
@@ -42,28 +41,41 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toTest" else { return }
         guard let destination = segue.destination as? TestViewController else { return }
-        //guard let destination1 = segue.destination as? QuestionsViewController else { return }
         guard let selectedPath = tableView.indexPathForSelectedRow else { return }
 
         destination.testName = String(array[selectedPath.row].name)
         destination.testDescription = String(array[selectedPath.row].desc)
-        destination.testCount = array[selectedPath.row].countQuestionsOnAnswer
+        destination.testIndex = selectedPath.row
     }
     
-    func addTest() {
-        let qqq = Test()
-        qqq.name = "IPSS"
-        qqq.countQuestions = 4
-        qqq.desc = "Система суммарной оценки симптомов болезней предстательной железы"
-        qqq.countQuestionsOnAnswer = 4
-        do {
-            try realm.write {
-                realm.add(qqq)
-            }
-        } catch {
-            print("Error \(error)")
-        }
+    func setupRealm() {
+        let realmPath = Bundle.main.url(forResource: "compact", withExtension: "realm")!
+        let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
+        self.realm = try! Realm(configuration: realmConfiguration)
     }
 
+    
+//    func addTest() {
+//        let qqq = Test()
+//        qqq.name = "МИЭФ-5"
+//        qqq.countQuestions = 4
+//        qqq.desc = "Система суммарной оценки симптомов болезней предстательной железы"
+//        qqq.countQuestionsOnAnswer = 4
+//        qqq.answers.append(Answer(value: ["Как часто в течение последнего месяца у Вас было ощущение"]))
+//        qqq.questions.append(Question(value: ["Никогда", 0]))
+//        
+//        do {
+//            try realm.write {
+//                realm.add(qqq)
+//            }
+//        } catch {
+//            print("Error \(error)")
+//        }
+//    }
+
+    
+
+
+    
 }
 
