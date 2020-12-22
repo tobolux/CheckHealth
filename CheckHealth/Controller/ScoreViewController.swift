@@ -12,7 +12,7 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var barItem: UINavigationItem!
     
-    var scoreTest = 0
+    var scoreTest = 0.0
     var testName = ""
     
     override func viewDidLoad() {
@@ -28,6 +28,31 @@ class ScoreViewController: UIViewController {
             resultLabel.text = resultMIEF5(for: scoreTest)
         case "CAGE":
             resultLabel.text = resultCAGE(for: scoreTest)
+        case "Тест Фагерстрема":
+            resultLabel.text = resultFagerstrem(for: scoreTest)
+        case "FSFI":
+            resultLabel.text = resultFSFI(for: scoreTest)
+        case "Риск сердечно-сосудистых заболеваний":
+            resultLabel.text = resultHeartRisk(for: scoreTest)
+        case "Хроническая болезнь легких":
+            resultLabel.text = resultHobl(for: scoreTest)
+        case "Варикозное расширение вен":
+            resultLabel.text = resultVien(for: scoreTest)
+        case "Бессоница":
+            resultLabel.text = resultSon(for: scoreTest)
+        case "Тест на память":
+            resultLabel.text = resultMemory(for: scoreTest)
+        case "Опущение органов таза у женщин":
+            resultLabel.text = resultProlaps(for: scoreTest)
+        case "Депрессия":
+            resultLabel.text = resultDepression(for: scoreTest)
+        case "Вероятность инсульта":
+            resultLabel.text = resultStroke(for: scoreTest)
+        case "Старение у мужчин (снижение тестостерона)":
+            resultLabel.text = resultAMS(for: scoreTest)
+        case "Старение у женщин (период климакса)":
+            resultLabel.text = resultClimax(for: scoreTest)
+            
         default:
             resultLabel.text = "Error"
         }

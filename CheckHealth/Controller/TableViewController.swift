@@ -10,11 +10,7 @@ import RealmSwift
 
 class TableViewController: UITableViewController {
     
-//    var array = [
-//        Test(name: "IPSS", countQuestions: 1, description: "Система суммарной оценки симптомов болезней предстательной железы"),
-//        Test(name: "FINDRISK", countQuestions: 10, description: "Для расчёта риска развития сахарного диабета"),
-//    ]
-    
+    //let realm = try! Realm()
     var realm: Realm!
     var array: Results<Test>!
     
@@ -34,7 +30,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = array[indexPath.row].name
         let detailText = String(array[indexPath.row].countQuestions)
-        cell?.detailTextLabel?.text = "Вопросов: \(detailText) "
+        cell?.detailTextLabel?.text = "Вопросов: \(detailText)"
         return cell!
     }
     
@@ -60,10 +56,10 @@ class TableViewController: UITableViewController {
 //        qqq.name = "МИЭФ-5"
 //        qqq.countQuestions = 4
 //        qqq.desc = "Система суммарной оценки симптомов болезней предстательной железы"
-//        qqq.countQuestionsOnAnswer = 4
-//        qqq.answers.append(Answer(value: ["Как часто в течение последнего месяца у Вас было ощущение"]))
+//        qqq.differentCountOfQuestions = false
+//        qqq.answers.append(Answer(value: ["Как часто в течение последнего месяца у Вас было ощущение", 0]))
 //        qqq.questions.append(Question(value: ["Никогда", 0]))
-//        
+//
 //        do {
 //            try realm.write {
 //                realm.add(qqq)

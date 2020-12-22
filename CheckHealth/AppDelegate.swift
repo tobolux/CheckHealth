@@ -13,9 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "error")
+//
+//        do {
+//            let realm = try Realm()
+//        } catch {
+//            print(error)
+//        }
 
-
+//
 //        func compactRealm() {
 //                if let realmPath = Realm.Configuration.defaultConfiguration.fileURL {
 //                    let destination = realmPath.deletingLastPathComponent().appendingPathComponent("compact.realm")
@@ -23,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                        do {
 //        //                    let encryption = Constants.key.data(using: String.Encoding.utf8)
 //                            try Realm().writeCopy(toFile: destination)
-//                            print("File normally compressed !")
+//                            print("File normally compressed!")
 //
 //                        } catch {
 //                            fatalError(error.localizedDescription)
@@ -36,7 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                }
 //
 //            }
-
+//
+//        compactRealm()
         
         return true
     }

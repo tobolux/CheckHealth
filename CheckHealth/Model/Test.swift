@@ -12,13 +12,15 @@ class Test: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var desc: String = ""
     @objc dynamic var countQuestions: Int = 0
-    @objc dynamic var countQuestionsOnAnswer: Int = 0
+    @objc dynamic var differentCountOfQuestions: Bool = false
+    
     var answers = List<Answer>()
     var questions = List<Question>()
 }
 
 class Answer: Object {
     @objc dynamic var answer: String = ""
+    @objc dynamic var countQuestionsOnAnswer: Int = 0
 }
 
 class Question: Object {

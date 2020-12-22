@@ -131,7 +131,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WOo-r6-lPR">
                                 <rect key="frame" x="0.0" y="147.5" width="414" height="715.5"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellQuestion" textLabel="aLK-Q7-OFZ" style="IBUITableViewCellStyleDefault" id="Kzs-2t-hnS">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -148,7 +147,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
@@ -234,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g6-z0-3g7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3618.840579710145" y="61.607142857142854"/>
+            <point key="canvasLocation" x="3617" y="62"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="akP-Lr-KjO">

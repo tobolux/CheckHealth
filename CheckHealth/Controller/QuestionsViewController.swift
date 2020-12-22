@@ -14,10 +14,9 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var progressView: UIProgressView!
     
     
-    var numberAnswer = 0, numberQuestion = 0, scoreTest = 0, testIndex = 0, testName = ""
+    var numberAnswer = 0, numberQuestion = 0, scoreTest = 0.0, testIndex = 0, testName = "", test = Test()
     var realm: Realm!
     var array: Results<Test>!
-    
 
     
     override func viewDidLoad() {
@@ -25,9 +24,9 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
 
         setupRealm()
         array = realm.objects(Test.self)
+        test = array[testIndex]
         
-        answerLabel.text = array[testIndex].answers[numberAnswer].answer
-        
+        answerLabel.text = test.answers[numberAnswer].answer
         
         tableViewAdd.delegate = self
         tableViewAdd.dataSource = self
@@ -36,32 +35,41 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array[testIndex].countQuestionsOnAnswer
+        return test.answers[numberAnswer].countQuestionsOnAnswer
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellQuestion", for: indexPath)
-        cell.textLabel?.text = array[testIndex].questions[indexPath.row + numberQuestion].question
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = test.questions[indexPath.row + numberQuestion].question
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedPath = tableView.indexPathForSelectedRow else { return }
-        let testName = array[testIndex].questions[selectedPath.row + numberQuestion].score
-    
+        let testName = test.questions[selectedPath.row + numberQuestion].score
+
+        if test.differentCountOfQuestions {
+        numberQuestion += test.answers[numberAnswer].countQuestionsOnAnswer
+        }
+        
+        if self.testName == "FSFI" {
+            scoreTest += calcFSFI(answer: numberAnswer, question: selectedPath.row)
+        } else {
+            scoreTest += Double(testName)
+        }
+        
         numberAnswer += 1
-        scoreTest += testName
         
         let totalProgress = Float(numberAnswer) / Float(array[testIndex].answers.count)
         
-        if numberAnswer == array[testIndex].countQuestions {
+        if numberAnswer == test.countQuestions {
             self.performSegue(withIdentifier: "toResult", sender: indexPath)
             } else {
-                //numberQuestion += 4
-                answerLabel.text = array[testIndex].answers[numberAnswer].answer
+                answerLabel.text = test.answers[numberAnswer].answer
                 progressView.setProgress(totalProgress, animated: true)
 
-                
                 tableView.reloadData()
                 
             }
@@ -70,7 +78,7 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ScoreViewController {
             destination.scoreTest = scoreTest
-            destination.testName = array[testIndex].name
+            destination.testName = test.name
         }
      }
     
