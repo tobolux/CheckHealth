@@ -13,15 +13,15 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableViewAdd: UITableView!
     @IBOutlet weak var progressView: UIProgressView!
     
-    
     var numberAnswer = 0, numberQuestion = 0, scoreTest = 0.0, testIndex = 0, testName = "", test = Test()
     var realm: Realm!
     var array: Results<Test>!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.dynamicColor
+        
         setupRealm()
         array = realm.objects(Test.self)
         test = array[testIndex]
@@ -30,8 +30,6 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableViewAdd.delegate = self
         tableViewAdd.dataSource = self
-        
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,8 +37,9 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellQuestion", for: indexPath)
+        tableView.backgroundColor = UIColor.dynamicColor
+        cell.backgroundColor = UIColor.dynamicColor
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = test.questions[indexPath.row + numberQuestion].question
         return cell
@@ -71,7 +70,6 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
                 progressView.setProgress(totalProgress, animated: true)
 
                 tableView.reloadData()
-                
             }
     }
     

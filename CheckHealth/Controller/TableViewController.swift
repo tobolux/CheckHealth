@@ -16,7 +16,7 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         title = "Проверь свое здоровье"
-    
+     
         //addTest()
         setupRealm()
         array = realm.objects(Test.self)
@@ -28,6 +28,9 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        tableView.backgroundColor = UIColor.dynamicColor
+        cell?.backgroundColor = UIColor.dynamicColor
+        
         cell?.textLabel?.text = array[indexPath.row].name
         let detailText = String(array[indexPath.row].countQuestions)
         cell?.detailTextLabel?.text = "Вопросов: \(detailText)"
@@ -70,8 +73,7 @@ class TableViewController: UITableViewController {
 //    }
 
     
-
-
     
 }
+
 

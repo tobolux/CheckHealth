@@ -17,9 +17,8 @@ class ScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.dynamicColor
         barItem.hidesBackButton = true
-        print(scoreTest)
         
         switch testName {
         case "IPSS":
@@ -52,6 +51,12 @@ class ScoreViewController: UIViewController {
             resultLabel.text = resultAMS(for: scoreTest)
         case "Старение у женщин (период климакса)":
             resultLabel.text = resultClimax(for: scoreTest)
+        case "Риск сахарного диабета":
+            resultLabel.text = resultDiabet(for: scoreTest)
+        case "Риск развития онкологических заболеваний (общий)":
+            resultLabel.text = resultCancer(for: scoreTest)
+        case let str where str.contains("Риск рака"):
+            resultLabel.text = resultCancerSingle(for: scoreTest)
             
         default:
             resultLabel.text = "Error"

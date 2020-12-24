@@ -19,7 +19,7 @@ class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.dynamicColor
         title = testName
         testNameLabel.text = testName
         testDescriptionLabel.text = testDescription

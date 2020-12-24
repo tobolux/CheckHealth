@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        } catch {
 //            print(error)
 //        }
-
 //
 //        func compactRealm() {
 //                if let realmPath = Realm.Configuration.defaultConfiguration.fileURL {
