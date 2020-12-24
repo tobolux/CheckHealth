@@ -10,16 +10,18 @@ import RealmSwift
 
 class TableViewController: UITableViewController {
     
-    //let realm = try! Realm()
     var realm: Realm!
     var array: Results<Test>!
     
     override func viewDidLoad() {
         title = "Проверь свое здоровье"
      
-        //addTest()
         setupRealm()
         array = realm.objects(Test.self)
+    }
+    
+    @IBAction func aboutItemPressed(_ sender: UIBarButtonItem) {
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +33,7 @@ class TableViewController: UITableViewController {
         tableView.backgroundColor = UIColor.dynamicColor
         cell?.backgroundColor = UIColor.dynamicColor
         
+        cell?.textLabel?.numberOfLines = 0
         cell?.textLabel?.text = array[indexPath.row].name
         let detailText = String(array[indexPath.row].countQuestions)
         cell?.detailTextLabel?.text = "Вопросов: \(detailText)"
@@ -53,26 +56,6 @@ class TableViewController: UITableViewController {
         self.realm = try! Realm(configuration: realmConfiguration)
     }
 
-    
-//    func addTest() {
-//        let qqq = Test()
-//        qqq.name = "МИЭФ-5"
-//        qqq.countQuestions = 4
-//        qqq.desc = "Система суммарной оценки симптомов болезней предстательной железы"
-//        qqq.differentCountOfQuestions = false
-//        qqq.answers.append(Answer(value: ["Как часто в течение последнего месяца у Вас было ощущение", 0]))
-//        qqq.questions.append(Question(value: ["Никогда", 0]))
-//
-//        do {
-//            try realm.write {
-//                realm.add(qqq)
-//            }
-//        } catch {
-//            print("Error \(error)")
-//        }
-//    }
-
-    
     
 }
 

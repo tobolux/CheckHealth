@@ -14,15 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-        
         print(Realm.Configuration.defaultConfiguration.fileURL ?? "error")
-//
-//        do {
-//            let realm = try Realm()
-//        } catch {
-//            print(error)
-//        }
+
 //
 //        func compactRealm() {
 //                if let realmPath = Realm.Configuration.defaultConfiguration.fileURL {

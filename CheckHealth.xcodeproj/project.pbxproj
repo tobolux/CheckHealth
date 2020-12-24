@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C0AD7002580BFB900C5524C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AD6FF2580BFB900C5524C /* QuestionsViewController.swift */; };
 		3C288C7825947F6A0027876D /* compact.realm in Resources */ = {isa = PBXBuildFile; fileRef = 3C288C7725947F6A0027876D /* compact.realm */; };
+		3C288C7B2594B96D0027876D /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C288C7A2594B96D0027876D /* AboutAppViewController.swift */; };
 		3C4A2B672593A02E00A46FD9 /* DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A2B662593A02E00A46FD9 /* DarkMode.swift */; };
 		3C87D90C2584EA060069E462 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87D90B2584EA060069E462 /* ScoreViewController.swift */; };
 		3CB7DC3E257FB7F500FEF1DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7DC3D257FB7F500FEF1DF /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		3C0AD6FF2580BFB900C5524C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		3C288C7725947F6A0027876D /* compact.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = compact.realm; sourceTree = "<group>"; };
+		3C288C7A2594B96D0027876D /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		3C4A2B662593A02E00A46FD9 /* DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkMode.swift; sourceTree = "<group>"; };
 		3C87D90B2584EA060069E462 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		3CB7DC3A257FB7F500FEF1DF /* CheckHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 		3CB7DC5F257FC6AB00FEF1DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3C288C7A2594B96D0027876D /* AboutAppViewController.swift */,
 				3CB7DC53257FB84400FEF1DF /* TableViewController.swift */,
 				3CB7DC5B257FC69E00FEF1DF /* TestViewController.swift */,
 				3C0AD6FF2580BFB900C5524C /* QuestionsViewController.swift */,
@@ -267,6 +270,7 @@
 				3CB7DC54257FB84400FEF1DF /* TableViewController.swift in Sources */,
 				3CB85769258787950006B549 /* Results.swift in Sources */,
 				3CB7DC40257FB7F500FEF1DF /* SceneDelegate.swift in Sources */,
+				3C288C7B2594B96D0027876D /* AboutAppViewController.swift in Sources */,
 				3C87D90C2584EA060069E462 /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
