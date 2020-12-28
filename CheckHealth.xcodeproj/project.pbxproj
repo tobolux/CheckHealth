@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C0AD7002580BFB900C5524C /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AD6FF2580BFB900C5524C /* QuestionsViewController.swift */; };
-		3C288C7825947F6A0027876D /* compact.realm in Resources */ = {isa = PBXBuildFile; fileRef = 3C288C7725947F6A0027876D /* compact.realm */; };
 		3C288C7B2594B96D0027876D /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C288C7A2594B96D0027876D /* AboutAppViewController.swift */; };
 		3C4A2B672593A02E00A46FD9 /* DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A2B662593A02E00A46FD9 /* DarkMode.swift */; };
 		3C87D90C2584EA060069E462 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87D90B2584EA060069E462 /* ScoreViewController.swift */; };
@@ -21,12 +20,13 @@
 		3CB7DC58257FBCF700FEF1DF /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7DC57257FBCF700FEF1DF /* Test.swift */; };
 		3CB7DC5C257FC69E00FEF1DF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7DC5B257FC69E00FEF1DF /* TestViewController.swift */; };
 		3CB85769258787950006B549 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85768258787950006B549 /* Results.swift */; };
+		3CE5B087259A2DF40088F948 /* compact.realm in Resources */ = {isa = PBXBuildFile; fileRef = 3CE5B086259A2DF40088F948 /* compact.realm */; };
+		3CE5B08A259A32BE0088F948 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5B089259A32BE0088F948 /* Realm.swift */; };
 		87CDA8835ABE9CBC31CDF1F3 /* Pods_CheckHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B97BD6F861DAD093EFCD15 /* Pods_CheckHealth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C0AD6FF2580BFB900C5524C /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
-		3C288C7725947F6A0027876D /* compact.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = compact.realm; sourceTree = "<group>"; };
 		3C288C7A2594B96D0027876D /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		3C4A2B662593A02E00A46FD9 /* DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkMode.swift; sourceTree = "<group>"; };
 		3C87D90B2584EA060069E462 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +41,8 @@
 		3CB7DC57257FBCF700FEF1DF /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		3CB7DC5B257FC69E00FEF1DF /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3CB85768258787950006B549 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		3CE5B086259A2DF40088F948 /* compact.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = compact.realm; sourceTree = "<group>"; };
+		3CE5B089259A32BE0088F948 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		50B97BD6F861DAD093EFCD15 /* Pods_CheckHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5909A5D9FC641C3D9DD8F20D /* Pods-CheckHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckHealth.debug.xcconfig"; path = "Target Support Files/Pods-CheckHealth/Pods-CheckHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		F0B4F6699C28CAA25BF4F25F /* Pods-CheckHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckHealth.release.xcconfig"; path = "Target Support Files/Pods-CheckHealth/Pods-CheckHealth.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		3C3949702587BBF000D6F4BE /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				3C288C7725947F6A0027876D /* compact.realm */,
+				3CE5B086259A2DF40088F948 /* compact.realm */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 			children = (
 				3CB7DC57257FBCF700FEF1DF /* Test.swift */,
 				3CB85768258787950006B549 /* Results.swift */,
+				3CE5B089259A32BE0088F948 /* Realm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,7 +212,7 @@
 				3CB7DC4A257FB7F900FEF1DF /* LaunchScreen.storyboard in Resources */,
 				3CB7DC47257FB7F900FEF1DF /* Assets.xcassets in Resources */,
 				3CB7DC45257FB7F500FEF1DF /* Main.storyboard in Resources */,
-				3C288C7825947F6A0027876D /* compact.realm in Resources */,
+				3CE5B087259A2DF40088F948 /* compact.realm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CB7DC5C257FC69E00FEF1DF /* TestViewController.swift in Sources */,
+				3CE5B08A259A32BE0088F948 /* Realm.swift in Sources */,
 				3CB7DC3E257FB7F500FEF1DF /* AppDelegate.swift in Sources */,
 				3C0AD7002580BFB900C5524C /* QuestionsViewController.swift in Sources */,
 				3C4A2B672593A02E00A46FD9 /* DarkMode.swift in Sources */,

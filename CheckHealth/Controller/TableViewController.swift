@@ -6,18 +6,13 @@
 //
 
 import UIKit
-import RealmSwift
 
 class TableViewController: UITableViewController {
     
-    var realm: Realm!
-    var array: Results<Test>!
-    
     override func viewDidLoad() {
         title = "Проверь свое здоровье"
-     
-        setupRealm()
-        array = realm.objects(Test.self)
+            
+        //updateSchemaVersion()
     }
     
     @IBAction func aboutItemPressed(_ sender: UIBarButtonItem) {
@@ -40,6 +35,15 @@ class TableViewController: UITableViewController {
         return cell!
     }
     
+    /*
+    Терапевтические тесты
+    Сердце и сосуды
+    Женское здоровье
+    Мужское здоровье
+    Психическое здоровье
+    Оценка рисков онкологии
+    */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toTest" else { return }
         guard let destination = segue.destination as? TestViewController else { return }
@@ -50,13 +54,7 @@ class TableViewController: UITableViewController {
         destination.testIndex = selectedPath.row
     }
     
-    func setupRealm() {
-        let realmPath = Bundle.main.url(forResource: "compact", withExtension: "realm")!
-        let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
-        self.realm = try! Realm(configuration: realmConfiguration)
-    }
 
-    
 }
 
 

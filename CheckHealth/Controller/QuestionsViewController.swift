@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class QuestionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var answerLabel: UILabel!
@@ -14,16 +13,12 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var progressView: UIProgressView!
     
     var numberAnswer = 0, numberQuestion = 0, scoreTest = 0.0, testIndex = 0, testName = "", test = Test()
-    var realm: Realm!
-    var array: Results<Test>!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.dynamicColor
         
-        setupRealm()
-        array = realm.objects(Test.self)
         test = array[testIndex]
         
         answerLabel.text = test.answers[numberAnswer].answer
@@ -79,12 +74,5 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
             destination.testName = test.name
         }
      }
-    
-    func setupRealm() {
-        let realmPath = Bundle.main.url(forResource: "compact", withExtension: "realm")!
-        let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
-        self.realm = try! Realm(configuration: realmConfiguration)
-    }
-
     
 }

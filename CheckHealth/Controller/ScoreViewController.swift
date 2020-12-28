@@ -21,25 +21,25 @@ class ScoreViewController: UIViewController {
         barItem.hidesBackButton = true
         
         switch testName {
-        case "IPSS":
+        case "Предстательная железа (проблемы мочеиспускания у мужчин)":
             resultLabel.text = resultIPSS(for: scoreTest)
-        case "МИЭФ-5":
+        case "Эректильная функция (эрекция)":
             resultLabel.text = resultMIEF5(for: scoreTest)
-        case "CAGE":
+        case "Алкогольная зависимость":
             resultLabel.text = resultCAGE(for: scoreTest)
-        case "Тест Фагерстрема":
+        case "Никотиновая зависимость":
             resultLabel.text = resultFagerstrem(for: scoreTest)
-        case "FSFI":
+        case "Индекс женской сексуальной функции ":
             resultLabel.text = resultFSFI(for: scoreTest)
         case "Риск сердечно-сосудистых заболеваний":
             resultLabel.text = resultHeartRisk(for: scoreTest)
-        case "Хроническая болезнь легких":
+        case "Хроническая болезнь легких (кашель, одышка)":
             resultLabel.text = resultHobl(for: scoreTest)
         case "Варикозное расширение вен":
             resultLabel.text = resultVien(for: scoreTest)
         case "Бессоница":
             resultLabel.text = resultSon(for: scoreTest)
-        case "Тест на память":
+        case "Память":
             resultLabel.text = resultMemory(for: scoreTest)
         case "Опущение органов таза у женщин":
             resultLabel.text = resultProlaps(for: scoreTest)
