@@ -14,40 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-        
-        
-//        func compactRealm() {
-//            if let defaultURL = Realm.Configuration.defaultConfiguration.fileURL {
-//                let compactedURL = defaultURL.deletingLastPathComponent().appendingPathComponent("compact.realm")
-//
-//                let config = Realm.Configuration(
-//                    schemaVersion: 3,
-//                    migrationBlock: { migration, oldSchemaVersion in
-//                        if (oldSchemaVersion < 2) {
-//                            // Nothing to do!
-//                            // Realm will automatically detect new properties and removed properties
-//                            // And will update the schema on disk automatically
-//                        }
-//                    })
-//                Realm.Configuration.defaultConfiguration = config
-//
-//                if FileManager.default.fileExists(atPath: compactedURL.path) {
-//                    do {
-//                        try Realm().writeCopy(toFile: compactedURL)
-//                        print("File normally compressed!")
-//                        //     try! FileManager.default.removeItem(at: defaultURL)
-//                    } catch {
-//                        fatalError(error.localizedDescription)
-//                    }
-//                }
-//            }
-//        }
-
-        //   compactRealm()
-        // print(Realm.Configuration.defaultConfiguration.fileURL ?? "error")
+    // print(Realm.Configuration.defaultConfiguration.fileURL ?? "error")
+    //    compactRealm()
         
         setupRealm()
+
+        UINavigationBar.appearance().barTintColor = UIColor.dynamicColor
+        UINavigationBar.appearance().tintColor = UIColor.dynamicColorHeader
 
         return true
 

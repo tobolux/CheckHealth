@@ -19,4 +19,21 @@ extension UIColor {
         }
         return UIColor(named: "Background") ?? .white
     }
+    
+    static let dynamicColorHeader = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+        if #available(iOS 13, *) {
+        if traitCollection.userInterfaceStyle == .dark {
+            return UIColor(named: "BackgroundHeader") ?? .systemGray2
+        } else {
+            return UIColor(named: "BackgroundHeader") ?? .systemTeal
+        }
+        }
+        return UIColor(named: "BackgroundHeader") ?? .systemTeal
+    }
+    
+    
 }
+
+
+
+

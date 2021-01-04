@@ -20,8 +20,8 @@
 		3CB7DC58257FBCF700FEF1DF /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7DC57257FBCF700FEF1DF /* Test.swift */; };
 		3CB7DC5C257FC69E00FEF1DF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7DC5B257FC69E00FEF1DF /* TestViewController.swift */; };
 		3CB85769258787950006B549 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85768258787950006B549 /* Results.swift */; };
-		3CE5B087259A2DF40088F948 /* compact.realm in Resources */ = {isa = PBXBuildFile; fileRef = 3CE5B086259A2DF40088F948 /* compact.realm */; };
 		3CE5B08A259A32BE0088F948 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5B089259A32BE0088F948 /* Realm.swift */; };
+		3CE6EAD6259B65BB0032513F /* compact.realm in Resources */ = {isa = PBXBuildFile; fileRef = 3CE6EAD5259B65BB0032513F /* compact.realm */; };
 		87CDA8835ABE9CBC31CDF1F3 /* Pods_CheckHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B97BD6F861DAD093EFCD15 /* Pods_CheckHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +41,8 @@
 		3CB7DC57257FBCF700FEF1DF /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		3CB7DC5B257FC69E00FEF1DF /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3CB85768258787950006B549 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
-		3CE5B086259A2DF40088F948 /* compact.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = compact.realm; sourceTree = "<group>"; };
 		3CE5B089259A32BE0088F948 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		3CE6EAD5259B65BB0032513F /* compact.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = compact.realm; sourceTree = "<group>"; };
 		50B97BD6F861DAD093EFCD15 /* Pods_CheckHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5909A5D9FC641C3D9DD8F20D /* Pods-CheckHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckHealth.debug.xcconfig"; path = "Target Support Files/Pods-CheckHealth/Pods-CheckHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		F0B4F6699C28CAA25BF4F25F /* Pods-CheckHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckHealth.release.xcconfig"; path = "Target Support Files/Pods-CheckHealth/Pods-CheckHealth.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		3C3949702587BBF000D6F4BE /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				3CE5B086259A2DF40088F948 /* compact.realm */,
+				3CE6EAD5259B65BB0032513F /* compact.realm */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 				3CB7DC4A257FB7F900FEF1DF /* LaunchScreen.storyboard in Resources */,
 				3CB7DC47257FB7F900FEF1DF /* Assets.xcassets in Resources */,
 				3CB7DC45257FB7F500FEF1DF /* Main.storyboard in Resources */,
-				3CE5B087259A2DF40088F948 /* compact.realm in Resources */,
+				3CE6EAD6259B65BB0032513F /* compact.realm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +289,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		3CB7DC48257FB7F900FEF1DF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -352,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -424,6 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = US7P92C2A5;
 				INFOPLIST_FILE = CheckHealth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -431,6 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.x.med.CheckHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -445,6 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = US7P92C2A5;
 				INFOPLIST_FILE = CheckHealth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -452,6 +456,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.x.med.CheckHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

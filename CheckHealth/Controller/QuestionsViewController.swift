@@ -35,6 +35,11 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellQuestion", for: indexPath)
         tableView.backgroundColor = UIColor.dynamicColor
         cell.backgroundColor = UIColor.dynamicColor
+        
+        let view = UIView()
+        view.backgroundColor = UIColor.dynamicColorHeader
+        cell.selectedBackgroundView = view
+        
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = test.questions[indexPath.row + numberQuestion].question
         return cell
@@ -48,7 +53,7 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
         numberQuestion += test.answers[numberAnswer].countQuestionsOnAnswer
         }
         
-        if self.testName == "FSFI" {
+        if self.testName == "Индекс женской сексуальной функции" {
             scoreTest += calcFSFI(answer: numberAnswer, question: selectedPath.row)
         } else {
             scoreTest += Double(testName)

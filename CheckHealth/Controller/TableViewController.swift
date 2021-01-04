@@ -9,52 +9,66 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    let items = array.sorted(by: ["group", "name"])
+      var sectionNames: [String] {
+        return Set(items.value(forKeyPath: "group") as! [String]).sorted()
+      }
+    
     override func viewDidLoad() {
         title = "Проверь свое здоровье"
-            
-        //updateSchemaVersion()
+
     }
     
-    @IBAction func aboutItemPressed(_ sender: UIBarButtonItem) {
-        
+    @IBAction func aboutItemPressed(_ sender: UIBarButtonItem) {}
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionNames.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionNames[section]
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return items.filter("group == %@", sectionNames[section]).count
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+        headerView.tintColor = UIColor.dynamicColorHeader
+        headerView.textLabel?.textColor = .white
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         tableView.backgroundColor = UIColor.dynamicColor
         cell?.backgroundColor = UIColor.dynamicColor
-        
         cell?.textLabel?.numberOfLines = 0
-        cell?.textLabel?.text = array[indexPath.row].name
-        let detailText = String(array[indexPath.row].countQuestions)
+        
+        let view = UIView()
+        view.backgroundColor = UIColor.dynamicColorHeader
+        cell?.selectedBackgroundView = view
+        
+        cell?.textLabel?.text = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row].name
+        let detailText = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row].countQuestions
         cell?.detailTextLabel?.text = "Вопросов: \(detailText)"
         return cell!
     }
-    
-    /*
-    Терапевтические тесты
-    Сердце и сосуды
-    Женское здоровье
-    Мужское здоровье
-    Психическое здоровье
-    Оценка рисков онкологии
-    */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toTest" else { return }
         guard let destination = segue.destination as? TestViewController else { return }
         guard let selectedPath = tableView.indexPathForSelectedRow else { return }
 
-        destination.testName = String(array[selectedPath.row].name)
-        destination.testDescription = String(array[selectedPath.row].desc)
-        destination.testIndex = selectedPath.row
+        destination.testName = String(items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].name)
+        destination.testDescription = String(items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].desc)
+        destination.testIndex = items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].id
+        
     }
     
 
 }
+
+
 
 
