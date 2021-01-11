@@ -77,6 +77,15 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		3CAC3C1F25AC639600D45360 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				3CB7DC3D257FB7F500FEF1DF /* AppDelegate.swift */,
+				3CB7DC3F257FB7F500FEF1DF /* SceneDelegate.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		3CB7DC31257FB7F500FEF1DF = {
 			isa = PBXGroup;
 			children = (
@@ -98,14 +107,13 @@
 		3CB7DC3C257FB7F500FEF1DF /* CheckHealth */ = {
 			isa = PBXGroup;
 			children = (
-				3CB7DC3D257FB7F500FEF1DF /* AppDelegate.swift */,
-				3CB7DC3F257FB7F500FEF1DF /* SceneDelegate.swift */,
 				3C3949702587BBF000D6F4BE /* Database */,
 				3CB7DC56257FBCE900FEF1DF /* Model */,
 				3CB7DC60257FC6BB00FEF1DF /* View */,
 				3CB7DC5F257FC6AB00FEF1DF /* Controller */,
-				3CB7DC46257FB7F900FEF1DF /* Assets.xcassets */,
+				3CAC3C1F25AC639600D45360 /* Supporting files */,
 				3CB7DC4B257FB7F900FEF1DF /* Info.plist */,
+				3CB7DC46257FB7F900FEF1DF /* Assets.xcassets */,
 			);
 			path = CheckHealth;
 			sourceTree = "<group>";
@@ -114,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				3CB7DC57257FBCF700FEF1DF /* Test.swift */,
-				3CB85768258787950006B549 /* Results.swift */,
 				3CE5B089259A32BE0088F948 /* Realm.swift */,
+				3CB85768258787950006B549 /* Results.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -353,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -367,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -408,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

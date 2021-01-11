@@ -18,8 +18,6 @@ class Test: Object {
     
     var answers = List<Answer>()
     var questions = List<Question>()
-    
-    
 }
 
 class Answer: Object {

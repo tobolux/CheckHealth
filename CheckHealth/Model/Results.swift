@@ -7,36 +7,16 @@
 
 import Foundation
 
-
-func resultIPSS(for value: Double) -> String {
-    switch value {
-    case 0:
-        return "Вы здоровы!\n"
-    case 1...7:
-        return "Нарушение мочеиспускания легкой степени. \n\nВозможно, стоит обратиться к врачу урологу \n"
-    case 8...19:
-        return "Нарушение мочеиспускания умеренной степени. \n\nОбратитесь к врачу урологу \n"
-    case 20...:
-        return "Нарушение мочеиспускания тяжелой степени. \n\nОбратитесь к врачу урологу \n"
+func calcFSFI(answer: Int, question: Int) -> Double {
+    switch answer {
+    case 1, 2:
+        return Double(question) * 0.6
+    case 3...10:
+        return Double(question) * 0.3
+    case 11...19:
+        return Double(question) * 0.4
     default:
-        return "Ошибка"
-    }
-}
-
-func resultMIEF5(for value: Double) -> String {
-    switch value {
-    case 5...7:
-        return "Все отлично. Проблем с эрекцией нет! \n"
-    case 8...11:
-        return "Легкая степень нарушения эректильной функции. \n\nВозможно, стоит обратиться к врачу урологу-андрологу \n"
-    case 12...16:
-        return "Умеренно-легкая степень нарушения эректильной функции. \n\nОбратитесь к врачу урологу-андрологу \n"
-    case 17...21:
-        return "Умеренная степень нарушения эректильной функции. \n\nОбратитесь к врачу урологу-андрологу \n"
-    case 22...25:
-        return "Тяжелая степень нарушения эректильной функции. \n\nОбратитесь к врачу урологу-андрологу \n"
-    default:
-        return "Ошибка"
+        return 0.0
     }
 }
 
@@ -72,16 +52,35 @@ func resultFagerstrem(for value: Double) -> String {
     }
 }
 
-func calcFSFI(answer: Int, question: Int) -> Double {
-    switch answer {
-    case 1, 2:
-        return Double(question) * 0.6
-    case 3...10:
-        return Double(question) * 0.3
-    case 11...19:
-        return Double(question) * 0.4
+func resultIPSS(for value: Double) -> String {
+    switch value {
+    case 0:
+        return "Вы здоровы!\n"
+    case 1...7:
+        return "Нарушение мочеиспускания легкой степени. \n\nВозможно, стоит обратиться к врачу урологу \n"
+    case 8...19:
+        return "Нарушение мочеиспускания умеренной степени. \n\nОбратитесь к врачу урологу \n"
+    case 20...:
+        return "Нарушение мочеиспускания тяжелой степени. \n\nОбратитесь к врачу урологу \n"
     default:
-        return 0.0
+        return "Ошибка"
+    }
+}
+
+func resultMIEF5(for value: Double) -> String {
+    switch value {
+    case 5...7:
+        return "Все отлично. Проблем с эрекцией нет! \n"
+    case 8...11:
+        return "Легкая степень нарушения эректильной функции. \n\nВозможно, стоит обратиться к врачу урологу-андрологу \n"
+    case 12...16:
+        return "Умеренно-легкая степень нарушения эректильной функции. \n\nОбратитесь к врачу урологу-андрологу \n"
+    case 17...21:
+        return "Умеренная степень нарушения эректильной функции. \n\nОбратитесь к врачу урологу-андрологу \n"
+    case 22...25:
+        return "Тяжелая степень нарушения эректильной функции. \n\nОбратитесь к врачу урологу-андрологу \n"
+    default:
+        return "Ошибка"
     }
 }
 

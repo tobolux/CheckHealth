@@ -16,11 +16,10 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = UIColor.dynamicColor
         
         test = array[testIndex]
-        
         answerLabel.text = test.answers[numberAnswer].answer
         
         tableViewAdd.delegate = self
@@ -60,7 +59,6 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         numberAnswer += 1
-        
         let totalProgress = Float(numberAnswer) / Float(array[testIndex].answers.count)
         
         if numberAnswer == test.countQuestions {
@@ -68,7 +66,6 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 answerLabel.text = test.answers[numberAnswer].answer
                 progressView.setProgress(totalProgress, animated: true)
-
                 tableView.reloadData()
             }
     }

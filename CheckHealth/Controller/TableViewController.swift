@@ -10,13 +10,12 @@ import UIKit
 class TableViewController: UITableViewController {
     
     let items = array.sorted(by: ["group", "name"])
-      var sectionNames: [String] {
+    var sectionNames: [String] {
         return Set(items.value(forKeyPath: "group") as! [String]).sorted()
       }
     
     override func viewDidLoad() {
         title = "Проверь свое здоровье"
-
     }
     
     @IBAction func aboutItemPressed(_ sender: UIBarButtonItem) {}
@@ -40,19 +39,19 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         tableView.backgroundColor = UIColor.dynamicColor
-        cell?.backgroundColor = UIColor.dynamicColor
-        cell?.textLabel?.numberOfLines = 0
+        cell.backgroundColor = UIColor.dynamicColor
+        cell.textLabel?.numberOfLines = 0
         
         let view = UIView()
         view.backgroundColor = UIColor.dynamicColorHeader
-        cell?.selectedBackgroundView = view
+        cell.selectedBackgroundView = view
         
-        cell?.textLabel?.text = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row].name
+        cell.textLabel?.text = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row].name
         let detailText = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row].countQuestions
-        cell?.detailTextLabel?.text = "Вопросов: \(detailText)"
-        return cell!
+        cell.detailTextLabel?.text = "Вопросов: \(detailText)"
+        return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,7 +62,6 @@ class TableViewController: UITableViewController {
         destination.testName = String(items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].name)
         destination.testDescription = String(items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].desc)
         destination.testIndex = items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].id
-        
     }
     
 
