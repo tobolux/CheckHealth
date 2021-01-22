@@ -1,10 +1,9 @@
 //
-//  QuestionsViewController.swift
+//  QuestionsViewController.swift
 //  CheckHealth
 //
 //  Created by Ilya Bolotov on 09.12.2020.
 //
-
 import UIKit
 
 class QuestionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

@@ -281,3 +281,46 @@ func resultCancerSingle(for value: Double) -> String {
         return "Ошибка"
     }
 }
+
+func resultText(name: String, score: Double) -> String {
+    switch name {
+    case "Индекс женской сексуальной функции ":
+        return resultFSFI(for: score)
+    case "Опущение органов таза у женщин":
+        return resultProlaps(for: score)
+    case "Старение у женщин (период климакса)":
+        return resultClimax(for: score)
+    case "Предстательная железа (проблемы мочеиспускания у мужчин)":
+        return resultIPSS(for: score)
+    case "Старение у мужчин (снижение тестостерона)":
+        return resultAMS(for: score)
+    case "Эректильная функция (эрекция)":
+        return resultMIEF5(for: score)
+    case "Риск развития онкологических заболеваний (общий)":
+        return resultCancer(for: score)
+    case let str where str.contains("Риск рака"):
+        return resultCancerSingle(for: score)
+    case "Алкогольная зависимость":
+        return resultCAGE(for: score)
+    case "Никотиновая зависимость":
+        return resultFagerstrem(for: score)
+    case "Бессоница":
+        return resultSon(for: score)
+    case "Депрессия":
+        return resultDepression(for: score)
+    case "Память":
+        return resultMemory(for: score)
+    case "Варикозное расширение вен":
+        return resultVien(for: score)
+    case "Вероятность инсульта":
+        return resultStroke(for: score)
+    case "Риск сердечно-сосудистых заболеваний":
+        return resultHeartRisk(for: score)
+    case "Хроническая болезнь легких (кашель, одышка)":
+        return resultHobl(for: score)
+    case "Риск сахарного диабета":
+        return resultDiabet(for: score)
+    default:
+        return "Error"
+    }
+}
