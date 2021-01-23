@@ -6,12 +6,14 @@
 //
 import UIKit
 
-class QuestionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QuestionsViewController: UIViewController {
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var tableViewAdd: UITableView!
     @IBOutlet weak var progressView: UIProgressView!
     
-    var numberAnswer = 0, numberQuestion = 0, scoreTest = 0.0, testIndex = 0, testName = "", test = Test()
+    var numberAnswer = 0, numberQuestion = 0, scoreTest = 0.0, testIndex = 0
+    var testName = ""
+    var test = Test()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,17 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
         tableViewAdd.dataSource = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ScoreViewController {
+            destination.scoreTest = scoreTest
+            destination.testName = test.name
+        }
+     }
+    
+}
+
+
+extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return test.answers[numberAnswer].countQuestionsOnAnswer
     }
@@ -68,12 +81,5 @@ class QuestionsViewController: UIViewController, UITableViewDelegate, UITableVie
                 tableView.reloadData()
             }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ScoreViewController {
-            destination.scoreTest = scoreTest
-            destination.testName = test.name
-        }
-     }
     
 }

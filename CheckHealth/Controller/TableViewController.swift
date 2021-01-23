@@ -48,8 +48,9 @@ class TableViewController: UITableViewController {
         view.backgroundColor = UIColor.dynamicColorHeader
         cell.selectedBackgroundView = view
         
-        cell.textLabel?.text = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row].name
-        let detailText = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row].countQuestions
+        let path = items.filter("group == %@", sectionNames[indexPath.section])[indexPath.row]
+        cell.textLabel?.text = path.name
+        let detailText = path.countQuestions
         cell.detailTextLabel?.text = "Вопросов: \(detailText)"
         return cell
     }
@@ -59,8 +60,9 @@ class TableViewController: UITableViewController {
         guard let destination = segue.destination as? TestViewController else { return }
         guard let selectedPath = tableView.indexPathForSelectedRow else { return }
 
-        destination.testName = String(items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].name)
-        destination.testDescription = String(items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].desc)
+        let path = items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row]
+        destination.testName = String(path.name)
+        destination.testDescription = String(path.desc)
         destination.testIndex = items.filter("group == %@", sectionNames[selectedPath.section])[selectedPath.row].id
     }
     
